@@ -22,9 +22,9 @@ let s:palette.constant  = {'dark': "#FFEE99",  'light': "#A37ACC",  'mirage': "#
 let s:palette.operator  = {'dark': "#E7C547",  'light': "#E7C547",  'mirage': "#80D4FF"}
 let s:palette.tag       = {'dark': "#36A3D9",  'light': "#36A3D9",  'mirage': "#5CCFE6"}
 let s:palette.regexp    = {'dark': "#95E6CB",  'light': "#4CBF99",  'mirage': "#95E6CB"}
-let s:palette.string    = {'dark': "#B8CC52",  'light': "#86B300",  'mirage': "#BBE67E"}
-let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#FFD57F"}
-let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#FFC44C"}
+" let s:palette.string    = {'dark': "#B8CC52",  'light': "#86B300",  'mirage': "#BBE67E"}
+" let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#FFD57F"}
+" let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#FFC44C"}
 let s:palette.keyword   = {'dark': "#FF7733",  'light': "#FF7733",  'mirage': "#FFAE57"}
 
 let s:palette.error     = {'dark': "#FF3333",  'light': "#FF3333",  'mirage': "#FF3333"}
@@ -35,6 +35,11 @@ let s:palette.line      = {'dark': "#151A1E",  'light': "#F3F3F3",  'mirage': "#
 let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#343F4C"}
 let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#D9D7CE"}
 let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#828C99",  'mirage': "#607080"}
+
+let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#EF6C0C"}
+let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#BBE67E"}
+let s:palette.string    = {'dark': "#FFFFFF",  'light': "#FFFFFF",  'mirage': "#EDB879"}
+let s:palette.important = {'dark': "#FFFFFF",  'light': "#FFFFFF",  'mirage': "#6161FA"}
 
 "}}}
 
@@ -80,50 +85,51 @@ exe "let s:fmt_revr = ' gui=NONE".s:r.      " cterm=NONE".s:r.      " term=NONE"
 exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
 "}}}
 
-
 " Vim Highlighting: (see :help highlight-groups)"{{{
 " ----------------------------------------------------------------------------
 exe "hi! Normal"        .s:fg_fg          .s:bg_bg          .s:fmt_none
-exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! ColorColumn"   .s:fg_none        .s:bg_bg          .s:fmt_none
 " Conceal, Cursor, CursorIM
-exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_line        .s:fmt_none
+exe "hi! CursorColumn"  .s:fg_none        .s:bg_bg          .s:fmt_none
+exe "hi! CursorLine"    .s:fg_none        .s:bg_bg          .s:fmt_bold
+exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_bg          .s:fmt_none
 exe "hi! LineNr"        .s:fg_guide       .s:bg_none        .s:fmt_none
 
 exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
-exe "hi! DiffAdd"       .s:fg_string      .s:bg_panel       .s:fmt_none
-exe "hi! DiffChange"    .s:fg_tag         .s:bg_panel       .s:fmt_none
-exe "hi! DiffText"      .s:fg_fg          .s:bg_panel       .s:fmt_none
+exe "hi! DiffAdd"       .s:fg_function    .s:bg_none        .s:fmt_none
+exe "hi! DiffChange"    .s:fg_tag         .s:bg_none        .s:fmt_none
+exe "hi! DiffText"      .s:fg_fg          .s:bg_none        .s:fmt_none
 exe "hi! ErrorMsg"      .s:fg_fg          .s:bg_error       .s:fmt_stnd
-exe "hi! VertSplit"     .s:fg_bg          .s:bg_none        .s:fmt_none
-exe "hi! Folded"        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
-exe "hi! FoldColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
-exe "hi! SignColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
-"   Incsearch"
+exe "hi! IncSearch"     .s:fg_constant    .s:bg_none        .s:fmt_revr
+exe "hi! Folded"        .s:fg_fg_idle     .s:bg_bg          .s:fmt_bold
+exe "hi! FoldColumn"    .s:fg_fg          .s:bg_bg          .s:fmt_none
+exe "hi! SignColumn"    .s:fg_fg          .s:bg_bg          .s:fmt_none
 
-exe "hi! MatchParen"    .s:fg_fg          .s:bg_bg          .s:fmt_undr
+exe "hi! MatchParen"    .s:fg_none        .s:bg_none        .s:fmt_revr
 exe "hi! ModeMsg"       .s:fg_string      .s:bg_none        .s:fmt_none
 exe "hi! MoreMsg"       .s:fg_string      .s:bg_none        .s:fmt_none
 exe "hi! NonText"       .s:fg_guide       .s:bg_none        .s:fmt_none
-exe "hi! Pmenu"         .s:fg_fg          .s:bg_selection   .s:fmt_none
-exe "hi! PmenuSel"      .s:fg_fg          .s:bg_selection   .s:fmt_revr
+exe "hi! Pmenu"         .s:fg_fg          .s:bg_bg          .s:fmt_none
+exe "hi! PmenuSel"      .s:fg_none        .s:bg_bg          .s:fmt_bold
 "   PmenuSbar"
 "   PmenuThumb"
 exe "hi! Question"      .s:fg_string      .s:bg_none        .s:fmt_none
-exe "hi! Search"        .s:fg_bg          .s:bg_constant    .s:fmt_none
+exe "hi! Search"        .s:fg_constant    .s:bg_none        .s:fmt_bold
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SpellCap"      .s:fg_tag         .s:bg_none        .s:fmt_undr
 exe "hi! SpellLocal"    .s:fg_keyword     .s:bg_none        .s:fmt_undr
 exe "hi! SpellBad"      .s:fg_error       .s:bg_none        .s:fmt_undr
 exe "hi! SpellRare"     .s:fg_regexp      .s:bg_none        .s:fmt_undr
-exe "hi! StatusLine"    .s:fg_fg          .s:bg_panel       .s:fmt_none
-exe "hi! StatusLineNC"  .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
+exe "hi! StatusLine"    .s:fg_fg          .s:bg_bg          .s:fmt_none
+exe "hi! StatusLineNC"  .s:fg_fg_idle     .s:bg_bg          .s:fmt_none
+exe "hi! VertSplit"     .s:fg_bg          .s:bg_none        .s:fmt_none
 exe "hi! WildMenu"      .s:fg_bg          .s:bg_markup      .s:fmt_none
-exe "hi! TabLine"       .s:fg_fg          .s:bg_panel       .s:fmt_revr
+exe "hi! TabLine"       .s:fg_bg          .s:bg_bg          .s:fmt_none
+exe "hi! TabLineFill"   .s:fg_fg          .s:bg_bg          .s:fmt_none
+exe "hi! TabLineSel"    .s:fg_string      .s:bg_none        .s:fmt_bold
 "   TabLineFill"
 "   TabLineSel"
-exe "hi! Title"         .s:fg_keyword     .s:bg_none        .s:fmt_none
+exe "hi! Title"         .s:fg_keyword     .s:bg_bg          .s:fmt_none
 exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
 "   VisualNos"
 exe "hi! WarningMsg"    .s:fg_error       .s:bg_none        .s:fmt_none
@@ -136,61 +142,48 @@ hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NO
 
 " Generic Syntax Highlighting: (see :help group-name)"{{{
 " ----------------------------------------------------------------------------
-exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_none
-
-exe "hi! Constant"        .s:fg_constant  .s:bg_none        .s:fmt_none
-exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
-"   Character"
-"   Number"
-"   Boolean"
-"   Float"
-
-exe "hi! Identifier"      .s:fg_tag       .s:bg_none        .s:fmt_none
+exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_ital
+exe "hi! Conceal"         .s:fg_guide     .s:bg_none        .s:fmt_none
+exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
+exe "hi! Constant"        .s:fg_important .s:bg_none        .s:fmt_none
+exe "hi! Error"           .s:fg_fg        .s:bg_error       .s:fmt_none
 exe "hi! Function"        .s:fg_function  .s:bg_none        .s:fmt_none
-
-exe "hi! Statement"       .s:fg_keyword   .s:bg_none        .s:fmt_none
-"   Conditional"
-"   Repeat"
-"   Label"
+exe "hi! Identifier"      .s:fg_tag       .s:bg_none        .s:fmt_none
+exe "hi! Ignore"          .s:fg_none      .s:bg_none        .s:fmt_none
 exe "hi! Operator"        .s:fg_operator  .s:bg_none        .s:fmt_none
 "   Keyword"
 "   Exception"
-
-exe "hi! PreProc"         .s:fg_special   .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_keyword  .s:bg_none        .s:fmt_none
 "   Include"
 "   Define"
 "   Macro"
 "   PreCondit"
-
-exe "hi! Type"            .s:fg_tag       .s:bg_none        .s:fmt_none
-"   StorageClass"
-exe "hi! Structure"       .s:fg_special   .s:bg_none        .s:fmt_none
-"   Typedef"
-
+exe "hi! qfLineNr"        .s:fg_keyword   .s:bg_none        .s:fmt_none
+"   qfFileName"
+"   qfLineNr"
+"   qfError"
 exe "hi! Special"         .s:fg_special   .s:bg_none        .s:fmt_none
 "   SpecialChar"
 "   Tag"
 "   Delimiter"
 "   SpecialComment"
 "   Debug"
-"
-exe "hi! Underlined"      .s:fg_tag       .s:bg_none        .s:fmt_undr
-
-exe "hi! Ignore"          .s:fg_none      .s:bg_none        .s:fmt_none
-
-exe "hi! Error"           .s:fg_fg        .s:bg_error       .s:fmt_none
-
-exe "hi! Todo"            .s:fg_markup    .s:bg_none        .s:fmt_none
-
+exe "hi! Statement"       .s:fg_error     .s:bg_none        .s:fmt_none
+"   Conditional"
+"   Repeat"
+"   Label"
+exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
+"   Character"
+"   Number"
+"   Boolean"
+"   Float"
+exe "hi! Structure"       .s:fg_special   .s:bg_none        .s:fmt_none
+"   Typedef"
+exe "hi! Type"            .s:fg_tag       .s:bg_none        .s:fmt_none
+"   StorageClass"
+exe "hi! Todo"            .s:fg_markup    .s:bg_none        .s:fmt_bold
 " Quickfix window highlighting
-exe "hi! qfLineNr"        .s:fg_keyword   .s:bg_none        .s:fmt_none
-"   qfFileName"
-"   qfLineNr"
-"   qfError"
-
-exe "hi! Conceal"         .s:fg_guide     .s:bg_none        .s:fmt_none
-exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
-
+exe "hi! Underlined"      .s:fg_tag       .s:bg_none        .s:fmt_undr
 
 " Terminal
 " ---------
@@ -241,10 +234,10 @@ exe "hi! NERDTreeDirSlash"          .s:fg_accent     .s:bg_none        .s:fmt_no
 
 " GitGutter
 " ---------
-exe "hi! GitGutterAdd"          .s:fg_string     .s:bg_none        .s:fmt_none
+exe "hi! GitGutterAdd"          .s:fg_function   .s:bg_none        .s:fmt_none
 exe "hi! GitGutterChange"       .s:fg_tag        .s:bg_none        .s:fmt_none
 exe "hi! GitGutterDelete"       .s:fg_markup     .s:bg_none        .s:fmt_none
-exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
+exe "hi! GitGutterChangeDelete" .s:fg_important   .s:bg_none        .s:fmt_none
 
 "}}}
 
@@ -261,17 +254,45 @@ exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
 "   diffIsA
 "   diffNoEOL
 "   diffCommon
-hi! link diffRemoved Constant
+" hi! link diffRemoved Constant
 "   diffChanged
-hi! link diffAdded String
+" exe "hi! diffAdded"  String
+exe "hi! diffRemoved"     .s:fg_constant        .s:bg_bg          .s:fmt_none
+exe "hi! diffAdded"       .s:fg_function        .s:bg_bg          .s:fmt_none
 "   diffLine
 "   diffSubname
 "   diffComment
 
 "}}}
-"
+" Markdown: {{{
+exe "hi! htmlH1"                .s:fg_none    .s:bg_important        .s:fmt_bold
+exe "hi! htmlH2"                .s:fg_keyword   .s:bg_none             .s:fmt_bold
+" hi! link mkdHeading htmlH1
+" hi! link htmlH2 diffAdded
+"   diffChanged
+" }}}
+" Python: {{{
+" types, builtin objects
+" hi! link pythonBuiltin deusPurpleBold
+" " callables
+" hi! link pythonFunction deusBlueBold
+" " if / else
+" hi! link pythonConditional deusRedBold
+" " and / in / or / not
+" hi! link pythonOperator deusRed
+" " def / return
+" hi! link pythonStatement deusOrangeBold
+" " @ symbol
+" hi! link pythonDecorator deusRedBold
+" " name
+" hi! link pythonDecoratorName deusRedBold
+" " from ...  import
+" hi! link pythonInclude deusGreen
+" hi! link pythonExceptions deusOrangeBold
+" hi! link pythonString deusYellow
+" hi! link pythonAttribute deusOrangeBold
+" }}}
 " This is needed for some reason: {{{
 
 let &background = s:style
-
 " }}}
