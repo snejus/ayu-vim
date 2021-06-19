@@ -12,35 +12,71 @@ let g:colors_name = "ayu"
 " Palettes:"{{{
 " ----------------------------------------------------------------------------
 
+" let s:palette.operator  = {'dark': "#E7C547",  'light': "#FF8773",  'mirage': "#80D4FF"}
+" let s:palette.special   = {'dark': "#E6B673",  'light': "#FFD33D",  'mirage': "#FFC44C"}
+" let s:palette.keyword   = {'dark': "#FF7733",  'light': "",  'mirage': "#FFAE57"}
+" let s:palette.error     = {'dark': "#FF3333",  'light': "#F07178",  'mirage': "#FF3333"}
+" let s:palette.string    = {'dark': "#F29718",  'light': "#FFCC66",  'mirage': "#EDB879"}
+" let s:palette.string    = {'dark': "#95E6CB",  'light': "#36A3D9",  'mirage': "#95E6CB"}
+
 let s:palette = {}
 
-let s:palette.bg        = {'dark': "#0F1419",  'light': "#FAFAFA",  'mirage': "#212733"}
+let s:palette.bg        = {'dark': "#212733",  'light': "#212733",  'mirage': "#212733"}
 
-let s:palette.comment   = {'dark': "#5C6773",  'light': "#ABB0B6",  'mirage': "#5C6773"}
 let s:palette.markup    = {'dark': "#F07178",  'light': "#F07178",  'mirage': "#F07178"}
-let s:palette.constant  = {'dark': "#FFEE99",  'light': "#A37ACC",  'mirage': "#D4BFFF"}
-let s:palette.operator  = {'dark': "#E7C547",  'light': "#E7C547",  'mirage': "#80D4FF"}
-let s:palette.tag       = {'dark': "#36A3D9",  'light': "#36A3D9",  'mirage': "#5CCFE6"}
-let s:palette.regexp    = {'dark': "#95E6CB",  'light': "#4CBF99",  'mirage': "#95E6CB"}
-" let s:palette.string    = {'dark': "#B8CC52",  'light': "#86B300",  'mirage': "#BBE67E"}
-" let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#FFD57F"}
-" let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#FFC44C"}
+let s:palette.comment   = {'dark': "#5C6773",  'light': "#5C6773",  'mirage': "#5C6773"}
+" comment
+let s:palette.constant  = {'dark': "#FFEE99",  'light': "#FFEE99",  'mirage': "#D4BFFF"}
+let s:palette.operator  = {'dark': "#E7C547",  'light': "#FF7733",  'mirage': "#FF8773"}
+let s:palette.tag       = {'dark': "#36A3D9",  'light': "#5CCFE6",  'mirage': "#5CCFE6"}
+let s:palette.string    = {'dark': "#F29718",  'light': "#FFCC66",  'mirage': "#EDB879"}
+let s:palette.regexp    = {'dark': "#95E6CB",  'light': "#80D4FF",  'mirage': "#D4BFFF"}
+let s:palette.accent    = {'dark': "#B8CC52",  'light': "#A7CD81",  'mirage': "#A7CD81"}
+let s:palette.function  = {'dark': "#FFB454",  'light': "#FFD57F",  'mirage': "#EDB879"}
 let s:palette.keyword   = {'dark': "#FF7733",  'light': "#FF7733",  'mirage': "#FFAE57"}
 
 let s:palette.error     = {'dark': "#FF3333",  'light': "#FF3333",  'mirage': "#FF3333"}
-let s:palette.accent    = {'dark': "#F29718",  'light': "#FF6A00",  'mirage': "#FFCC66"}
-let s:palette.panel     = {'dark': "#14191F",  'light': "#FFFFFF",  'mirage': "#272D38"}
-let s:palette.guide     = {'dark': "#2D3640",  'light': "#D9D8D7",  'mirage': "#3D4751"}
-let s:palette.line      = {'dark': "#151A1E",  'light': "#F3F3F3",  'mirage': "#242B38"}
-let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#343F4C"}
-let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#D9D7CE"}
-let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#828C99",  'mirage': "#607080"}
+let s:palette.panel     = {'dark': "#14191F",  'light': "#272D38",  'mirage': "#272D38"}
+let s:palette.guide     = {'dark': "#2D3640",  'light': "#27344B",  'mirage': "#3D4751"}
+let s:palette.line      = {'dark': "#151A1E",  'light': "#242B38",  'mirage': "#242B38"}
+let s:palette.selection = {'dark': "#253340",  'light': "#343F4C",  'mirage': "#343F4C"}
+let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#D9D7CE",  'mirage': "#D9D7CE"}
+let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#607080",  'mirage': "#607080"}
 
-let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#EF6C0C"}
-let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#BBE67E"}
-let s:palette.string    = {'dark': "#FFFFFF",  'light': "#FFFFFF",  'mirage': "#EDB879"}
-let s:palette.important = {'dark': "#FFFFFF",  'light': "#FFFFFF",  'mirage': "#6161FA"}
+let s:palette.special   = {'dark': "#E6B673",  'light': "#EF6C0C",  'mirage': "#36A3D9"}
+let s:palette.accent    = {'dark': "#FFFFFF",  'light': "#EDB879",  'mirage': "#EDB879"}
+let s:palette.important = {'dark': "#FFFFFF",  'light': "#FF7733",  'mirage': "#F07178"}
 
+let s:palette.removed   = {'dark': "",  'light': "",  'mirage': "#F07178"}
+let s:palette.added     = {'dark': "",  'light': "",  'mirage': "#A7CD81"}
+let s:palette.todo      = {'dark': "",  'light': "",  'mirage': "#6161FA"}
+
+"#A04748  #FF8773 #FFD33D #09152D #27344B #267275 #A04748
+"
+"#5C6773"
+
+"#F07178"
+"#D4BFFF"
+"#FF8773"
+"#5CCFE6"
+"#267275"
+"#A7CD81"
+"#FFD57F"
+"#FFD33D"
+"#A04748"
+"#FF3333"
+"#FFCC66"
+"#271320"
+"#27344B"
+"#242B38"
+"#343F4C"
+"#D9D7CE"
+"#607080"
+
+"#EF6C0C"
+"#BBE67E"
+"#EDB879"
+"#09152D"
 "}}}
 
 " Highlighting Primitives:"{{{
@@ -96,16 +132,16 @@ exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_bg          .s:fmt_none
 exe "hi! LineNr"        .s:fg_guide       .s:bg_none        .s:fmt_none
 
 exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
-exe "hi! DiffAdd"       .s:fg_function    .s:bg_none        .s:fmt_none
+exe "hi! DiffAdd"       .s:fg_added       .s:bg_none        .s:fmt_none
 exe "hi! DiffChange"    .s:fg_tag         .s:bg_none        .s:fmt_none
 exe "hi! DiffText"      .s:fg_fg          .s:bg_none        .s:fmt_none
 exe "hi! ErrorMsg"      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe "hi! IncSearch"     .s:fg_constant    .s:bg_none        .s:fmt_revr
-exe "hi! Folded"        .s:fg_fg_idle     .s:bg_bg          .s:fmt_bold
+exe "hi! Folded"        .s:fg_constant    .s:bg_bg          .s:fmt_bold
 exe "hi! FoldColumn"    .s:fg_fg          .s:bg_bg          .s:fmt_none
 exe "hi! SignColumn"    .s:fg_fg          .s:bg_bg          .s:fmt_none
 
-exe "hi! MatchParen"    .s:fg_none        .s:bg_none        .s:fmt_revr
+exe "hi! MatchParen"    .s:fg_error       .s:bg_bg          .s:fmt_bold
 exe "hi! ModeMsg"       .s:fg_string      .s:bg_none        .s:fmt_none
 exe "hi! MoreMsg"       .s:fg_string      .s:bg_none        .s:fmt_none
 exe "hi! NonText"       .s:fg_guide       .s:bg_none        .s:fmt_none
@@ -118,7 +154,7 @@ exe "hi! Search"        .s:fg_constant    .s:bg_none        .s:fmt_bold
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SpellCap"      .s:fg_tag         .s:bg_none        .s:fmt_undr
 exe "hi! SpellLocal"    .s:fg_keyword     .s:bg_none        .s:fmt_undr
-exe "hi! SpellBad"      .s:fg_error       .s:bg_none        .s:fmt_undr
+exe "hi! SpellBad"      .s:fg_error       .s:bg_none        .s:fmt_bold
 exe "hi! SpellRare"     .s:fg_regexp      .s:bg_none        .s:fmt_undr
 exe "hi! StatusLine"    .s:fg_fg          .s:bg_bg          .s:fmt_none
 exe "hi! StatusLineNC"  .s:fg_fg_idle     .s:bg_bg          .s:fmt_none
@@ -145,7 +181,7 @@ hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NO
 exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_ital
 exe "hi! Conceal"         .s:fg_guide     .s:bg_none        .s:fmt_none
 exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
-exe "hi! Constant"        .s:fg_important .s:bg_none        .s:fmt_none
+exe "hi! Constant"        .s:fg_important .s:bg_none        .s:fmt_bold
 exe "hi! Error"           .s:fg_fg        .s:bg_error       .s:fmt_none
 exe "hi! Function"        .s:fg_function  .s:bg_none        .s:fmt_none
 exe "hi! Identifier"      .s:fg_tag       .s:bg_none        .s:fmt_none
@@ -153,7 +189,7 @@ exe "hi! Ignore"          .s:fg_none      .s:bg_none        .s:fmt_none
 exe "hi! Operator"        .s:fg_operator  .s:bg_none        .s:fmt_none
 "   Keyword"
 "   Exception"
-exe "hi! PreProc"         .s:fg_keyword  .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_regexp  .s:bg_none        .s:fmt_none
 "   Include"
 "   Define"
 "   Macro"
@@ -171,39 +207,46 @@ exe "hi! Special"         .s:fg_special   .s:bg_none        .s:fmt_none
 exe "hi! Statement"       .s:fg_error     .s:bg_none        .s:fmt_none
 "   Conditional"
 "   Repeat"
+" }}}
 "   Label"
 exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
+" let s:c      = #",undercurl"
+" let s:r      = #",reverse"
+" let s:s      = #",standout"
+" let s:b      = #",bold"
+" let s:u      = #",underline"
+" let s:i      = #",italic"
 "   Character"
 "   Number"
-"   Boolean"
+exe "hi! Boolean"         .s:fg_important .s:bg_none        .s:fmt_bold
 "   Float"
 exe "hi! Structure"       .s:fg_special   .s:bg_none        .s:fmt_none
 "   Typedef"
 exe "hi! Type"            .s:fg_tag       .s:bg_none        .s:fmt_none
 "   StorageClass"
-exe "hi! Todo"            .s:fg_markup    .s:bg_none        .s:fmt_bold
+exe "hi! Todo"            .s:fg_todo      .s:bg_none        .s:fmt_bold
 " Quickfix window highlighting
 exe "hi! Underlined"      .s:fg_tag       .s:bg_none        .s:fmt_undr
 
 " Terminal
 " ---------
-if has("nvim")
-  let g:terminal_color_0 =  s:palette.bg[s:style]
-  let g:terminal_color_1 =  s:palette.markup[s:style]
-  let g:terminal_color_2 =  s:palette.string[s:style]
-  let g:terminal_color_3 =  s:palette.accent[s:style]
-  let g:terminal_color_4 =  s:palette.tag[s:style]
-  let g:terminal_color_5 =  s:palette.constant[s:style]
-  let g:terminal_color_6 =  s:palette.regexp[s:style]
-  let g:terminal_color_7 =  "#FFFFFF"
-  let g:terminal_color_8 =  s:palette.fg_idle[s:style]
-  let g:terminal_color_9 =  s:palette.error[s:style]
-  let g:terminal_color_10 = s:palette.string[s:style]
-  let g:terminal_color_11 = s:palette.accent[s:style]
-  let g:terminal_color_12 = s:palette.tag[s:style]
-  let g:terminal_color_13 = s:palette.constant[s:style]
-  let g:terminal_color_14 = s:palette.regexp[s:style]
-  let g:terminal_color_15 = s:palette.comment[s:style]
+if has('nvim')
+  let g:terminal_color_0 =  '#212733'
+  let g:terminal_color_1 =  '#ff557f'
+  let g:terminal_color_2 =  '#a7cd81'
+  let g:terminal_color_3 =  '#ffd787'
+  let g:terminal_color_4 =  '#6495ed'
+  let g:terminal_color_5 =  '#8e6ebc'
+  let g:terminal_color_6 =  '#87ceeb'
+  let g:terminal_color_7 =  '#ffd8b5'
+  let g:terminal_color_8 =  '#000000'
+  let g:terminal_color_9 =  '#fb4934'
+  let g:terminal_color_10 = '#a8e137'
+  let g:terminal_color_11 = '#fc9b29'
+  let g:terminal_color_12 = '#1a8fff'
+  let g:terminal_color_13 = '#c31fc9'
+  let g:terminal_color_14 = '#19cfce'
+  let g:terminal_color_15 = '#ffffff'
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = s:palette.fg[s:style]
 else
@@ -226,18 +269,18 @@ exe "hi! NERDTreeClosable"          .s:fg_accent      .s:bg_none        .s:fmt_n
 " exe "hi! NERDTreeBookmarksLeader"   .s:fg_bg          .s:bg_none        .s:fmt_none
 " exe "hi! NERDTreeBookmarkName"      .s:fg_keyword     .s:bg_none        .s:fmt_none
 " exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeUp"                .s:fg_fg_idle    .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeDir"               .s:fg_function   .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeFile"              .s:fg_none       .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeDirSlash"          .s:fg_accent     .s:bg_none        .s:fmt_none
+exe 'hi! NERDTreeUp'        .s:fg_fg_idle   .s:bg_none  .s:fmt_none
+exe 'hi! NERDTreeDir'       .s:fg_added     .s:bg_none  .s:fmt_none
+exe 'hi! NERDTreeFile'      .s:fg_none      .s:bg_none  .s:fmt_none
+exe 'hi! NERDTreeDirSlash'  .s:fg_accent    .s:bg_none  .s:fmt_none
 
 
 " GitGutter
 " ---------
-exe "hi! GitGutterAdd"          .s:fg_function   .s:bg_none        .s:fmt_none
-exe "hi! GitGutterChange"       .s:fg_tag        .s:bg_none        .s:fmt_none
-exe "hi! GitGutterDelete"       .s:fg_markup     .s:bg_none        .s:fmt_none
-exe "hi! GitGutterChangeDelete" .s:fg_important   .s:bg_none        .s:fmt_none
+exe "hi! GitGutterAdd"          .s:fg_added     .s:bg_none  .s:fmt_none
+exe "hi! GitGutterChange"       .s:fg_tag       .s:bg_none  .s:fmt_bold
+exe "hi! GitGutterDelete"       .s:fg_removed   .s:bg_none  .s:fmt_none
+exe "hi! GitGutterChangeDelete" .s:fg_important .s:bg_none  .s:fmt_none
 
 "}}}
 
@@ -256,9 +299,8 @@ exe "hi! GitGutterChangeDelete" .s:fg_important   .s:bg_none        .s:fmt_none
 "   diffCommon
 " hi! link diffRemoved Constant
 "   diffChanged
-" exe "hi! diffAdded"  String
-exe "hi! diffRemoved"     .s:fg_constant        .s:bg_bg          .s:fmt_none
-exe "hi! diffAdded"       .s:fg_function        .s:bg_bg          .s:fmt_none
+exe 'hi! diffRemoved'   .s:fg_removed   .s:bg_panel .s:fmt_bold
+exe 'hi! diffAdded'     .s:fg_added     .s:bg_panel .s:fmt_bold
 "   diffLine
 "   diffSubname
 "   diffComment
@@ -273,24 +315,25 @@ exe "hi! htmlH2"                .s:fg_keyword   .s:bg_none             .s:fmt_bo
 " }}}
 " Python: {{{
 " types, builtin objects
-" hi! link pythonBuiltin deusPurpleBold
+hi! link pythonBuiltin Boolean
 " " callables
-" hi! link pythonFunction deusBlueBold
+hi! link pythonFunction Todo
 " " if / else
 " hi! link pythonConditional deusRedBold
 " " and / in / or / not
 " hi! link pythonOperator deusRed
 " " def / return
-" hi! link pythonStatement deusOrangeBold
+" hi! link pythonStatement diffAdded
 " " @ symbol
 " hi! link pythonDecorator deusRedBold
 " " name
-" hi! link pythonDecoratorName deusRedBold
+hi! link pythonDecoratorName gitGutterChange
 " " from ...  import
-" hi! link pythonInclude deusGreen
+" hi! link pythonInclude Todo
 " hi! link pythonExceptions deusOrangeBold
-" hi! link pythonString deusYellow
-" hi! link pythonAttribute deusOrangeBold
+" hi! link pythonString GitGutterChangeDelete
+" hi! link pythonAttribute GitGutterChangeDelete
+" exe "hi! pythonBoolean"         .s:fg_important .s:bg_none        .s:fmt_none
 " }}}
 " This is needed for some reason: {{{
 
